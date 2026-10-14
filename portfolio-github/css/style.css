@@ -1,0 +1,84 @@
+:root{--bg:#0a0a0a;--bg2:#111111;--card:#161616;--line:#2f2a1c;--ink:#f5f0e1;--muted:#a89f8a;--brand:#d4af37;--brand2:#f0d060}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+.text-secondary{color:var(--muted)!important}
+.navbar{background:rgba(10,10,10,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo img{height:38px;width:38px;margin-right:.5rem;vertical-align:middle}
+.logo{font-weight:700;font-size:1.4rem;color:var(--ink)!important}.logo span{color:var(--brand)}
+.nav-link{color:var(--muted)!important;font-weight:500}.nav-link:hover,.nav-link.active{color:var(--brand2)!important}
+.hero{padding:9rem 0 5rem;background:radial-gradient(circle at 80% 20%,rgba(212,175,55,.25),transparent 45%)}
+.hero-tag{color:var(--brand2);font-weight:500;margin:0}
+.hero h1{font-size:clamp(2.6rem,7vw,4.5rem);font-weight:700}
+.hero-role{font-size:1.5rem;font-weight:500}.hero-role span{color:var(--brand)}
+.foto{width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:50%;border:4px solid var(--brand);box-shadow:0 0 0 10px rgba(212,175,55,.15)}
+.btn-brand{background:var(--brand);border:0;color:#0a0a0a;font-weight:500}.btn-brand:hover{background:#b8962e;color:#0a0a0a}
+.btn-outline-brand{border:1px solid var(--brand);color:var(--brand);font-weight:500}.btn-outline-brand:hover{background:var(--brand);color:#0a0a0a}
+.social a{color:var(--ink);font-size:1.5rem;margin-right:1rem;transition:.2s}.social a:hover{color:var(--brand2)}
+.secao{padding:5rem 0}.alt{background:var(--bg2)}
+.secao-tag{color:var(--brand2);font-weight:600;margin:0;font-size:.9rem}
+.secao-titulo{font-weight:700;margin-bottom:2rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem .5rem;color:var(--muted);font-size:.85rem}
+.stat strong{display:block;font-size:2rem;color:var(--brand)}
+.filtros{display:flex;flex-wrap:wrap;gap:.5rem}
+.filtros button{background:var(--card);border:1px solid var(--line);color:var(--ink);padding:.4rem 1rem;border-radius:999px;font-size:.9rem}
+.filtros button.on,.filtros button:hover{background:var(--brand);border-color:var(--brand);color:#0a0a0a}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:16px;height:100%;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-4px);border-color:var(--brand)}
+.proj img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--bg)}
+.proj .corpo{padding:1.25rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.proj h3{font-size:1.2rem;font-weight:600;margin:0}
+.proj p{color:var(--muted);font-size:.92rem;margin:0;flex:1}
+.proj .badge{background:rgba(212,175,55,.15);color:var(--brand2);font-weight:500}
+.proj a.ver{color:var(--brand);font-weight:600;text-decoration:none}
+.tech-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1rem;text-align:center;transition:.2s;height:100%}
+.tech-item:hover{border-color:var(--brand2);transform:translateY(-3px)}
+.tech-item i{font-size:2.2rem;color:var(--brand)}.tech-item span{display:block;margin-top:.5rem;font-weight:500}
+.caixa{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2rem}
+.form-control{background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+.form-control:focus{background:var(--bg);color:var(--ink);border-color:var(--brand);box-shadow:0 0 0 .2rem rgba(212,175,55,.25)}
+footer{padding:2rem 1rem;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+
+/* barra de progresso e menu */
+#progresso{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));z-index:2000}
+.navbar{transition:padding .25s,box-shadow .25s}
+.navbar.compacto{padding-top:.2rem;padding-bottom:.2rem;box-shadow:0 6px 24px rgba(0,0,0,.6)}
+.nav-link{position:relative}
+.nav-link::after{content:"";position:absolute;left:.5rem;right:.5rem;bottom:2px;height:2px;background:var(--brand);transform:scaleX(0);transition:transform .25s}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
+
+/* entrada ao rolar */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visivel{opacity:1;transform:none}
+.fade-in{animation:subir .8s ease both}.fade-in.d1{animation-delay:.15s}
+@keyframes subir{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.foto{animation:flutuar 5s ease-in-out infinite}
+@keyframes flutuar{50%{transform:translateY(-10px)}}
+
+/* hover nos cards */
+.proj,.tech-item,.stat,.contato-card{transition:transform .3s,border-color .3s,box-shadow .3s,background .3s}
+.proj:hover{transform:translateY(-8px);box-shadow:0 14px 34px rgba(212,175,55,.22)}
+.proj img{transition:transform .5s}
+.proj:hover img{transform:scale(1.07)}
+.proj{overflow:hidden}
+.proj .ver i{display:inline-block;transition:transform .25s}
+.proj:hover .ver i{transform:translate(4px,-4px)}
+.tech-item img,.tech-item i{width:52px;height:52px;display:block;margin:0 auto;transition:transform .35s;font-size:2.6rem}
+.tech-item img.mono{filter:invert(1) sepia(1) saturate(4) hue-rotate(5deg) brightness(.95)}
+.tech-item:hover{transform:translateY(-6px);box-shadow:0 10px 28px rgba(212,175,55,.2)}
+.tech-item:hover img,.tech-item:hover i{transform:scale(1.2) rotate(-6deg)}
+.stat:hover{transform:translateY(-5px);border-color:var(--brand);box-shadow:0 10px 24px rgba(212,175,55,.18)}
+
+/* contato */
+.contato-card{display:block;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.8rem 1rem;text-decoration:none;color:var(--ink);height:100%}
+.contato-card i{font-size:2.2rem;color:var(--brand);display:block;transition:transform .3s}
+.contato-card strong{display:block;margin-top:.4rem}
+.contato-card span{color:var(--muted);font-size:.9rem}
+.contato-card:hover{transform:translateY(-6px);border-color:var(--brand);box-shadow:0 12px 30px rgba(212,175,55,.22);color:var(--ink)}
+.contato-card:hover i{transform:scale(1.2) rotate(-8deg)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .fade-in,.foto{animation:none}
+  .proj,.tech-item,.stat,.contato-card,.proj img{transition:none}
+}
